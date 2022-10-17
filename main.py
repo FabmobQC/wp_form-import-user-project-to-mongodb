@@ -21,11 +21,7 @@ mydb = mysql.connector.connect(
   database=config_data["databases"]["mysql"]["dbname"]
 )
 
-# Select all entries from the french form
-
 mycursor = mydb.cursor()
-
-#mycursor.execute("SELECT COUNT(wp_tc2c36s7fq_wpforms_entry_fields.id) FROM `wp_tc2c36s7fq_wpforms_entry_fields` WHERE wp_tc2c36s7fq_wpforms_entry_fields.form_id = 25100")
 
 
 def update_user_project(mysql_c,  mongodb_c, form_id, uuid_field_id, project_field_id):
@@ -55,7 +51,9 @@ def update_user_project(mysql_c,  mongodb_c, form_id, uuid_field_id, project_fie
             print("User {} has project {}".format(user_uuid, project))
 
 
-
+# Select all entries from the french form
 update_user_project(mycursor, mongodb, "25100", "14", "28")
+
+# Select all entries from the english form
 update_user_project(mycursor, mongodb, "25278", "14", "24")
 
